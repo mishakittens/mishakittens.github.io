@@ -1,0 +1,145 @@
+/* Base styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FFFAF5;
+  color: #3B2F2F;
+  line-height: 1.6;
+  padding: none;
+  margin: auto;
+}
+
+/* Section base */
+.commissions {
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 30px;
+  background-color: #FFF5EB;
+  border: 1px solid #E9D6C9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(180, 140, 100, 0.1);
+}
+
+/* Headings */
+.commissions h2 {
+  font-family: monospace;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #FF4F0F;
+  border-bottom: 2px solid #E9D6C9;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.commissions h3 {
+  font-family: monospace;
+  font-size: 24px;
+  margin-top: 30px;
+  color: #5C4033;
+}
+
+/* Tables */
+.commissions table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.commissions td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #E9D6C9;
+}
+
+.commissions td:first-child {
+  width: 80px;
+  font-weight: bold;
+  color: #03A6A1;
+}
+
+/* Lists */
+.commissions ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.commissions li {
+  margin-bottom: 8px;
+}
+
+/* Paragraph */
+.commissions p {
+  margin-top: 10px;
+  font-style: italic;
+  color: #7a5b4b;
+}
+
+/* Navigation Bar */
+.topnav {
+  background-color: #B1C29E;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 8px rgba(180, 140, 100, 0.1);
+}
+
+/* Styled buttons */
+.topnav a {
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #FF4F0F;
+  color: #FFF;
+  border-radius: 0px;
+  transition: background-color 0.3s ease-out;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.button {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.button a{
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #FF4F0F;
+  color: #FFF;
+  border-radius: 0px;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.button a:hover, .topnav a:hover{
+  background-color: #FFA673;
+  color: #5C4033;
+}
+
+/* Display hardware photos */
+.display{
+  display: flex;
+  padding: 1px;
+}
+.display .item{
+  background-color: mintcream;
+  display: block;
+  margin: 4px;
+  width: 20%;
+  border-bottom: 2px solid #E9D6C9;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .commissions {
+    padding: 20px;
+  }
+
+  .commissions h2 {
+    font-size: 28px;
+  }
+
+  .commissions h3 {
+    font-size: 20px;
+  }
+}

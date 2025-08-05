@@ -1,0 +1,69 @@
+.gallery-section {
+  /*padding: 60px 20px;*/
+
+}
+.gallery-section h2 {
+ font-family: monospace;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #FF4F0F;
+  border-bottom: 2px solid #E9D6C9;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* Filter Buttons */
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.filter-btn {
+  background: #FFA673;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #FF4F0F;
+  color: #fff;
+}
+
+/* Masonry Layout */
+.masonry-gallery {
+  column-count: 2;
+  column-gap: 20px;
+}
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Columns */
+@media (max-width: 900px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
+

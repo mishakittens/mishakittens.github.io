@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-gallery.css" />
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        // Update active button style
+        document.querySelector(".filter-btn.active")?.classList.remove("active");
+        button.classList.add("active");
+
+        const selectedCategory = button.getAttribute("data-category");
+
+        galleryItems.forEach(item => {
+          const itemCategory = item.getAttribute("data-category");
+
+          if (selectedCategory === "all" || itemCategory === selectedCategory) {
+            item.style.display = "inline-block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // Lightbox zoom feature
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    galleryItems.forEach(item => {
+      item.addEventListener("click", () => {
+        const imgSrc = item.querySelector("img").getAttribute("src");
+        lightboxImg.setAttribute("src", imgSrc);
+        lightbox.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  });
+</script>
+
+
+<body>
+
+<nav class="topnav">
+  <a href="index.html" id="HomeBtn">Home</a>
+  <a href="gallery.html" id="GalleryBtn">Gallery</a>
+  <a href="prices.html" id="PricesBtn">Prices</a>
+  <a href="" id="RequestCommBtn">Request Commission</a>
+</nav>
+
+<section class="gallery-section">
+  <div class="commissions">
+    <h2>Gallery</h2>
+
+    <!-- Category Filters -->
+    <div class="filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="digital">Digital</button>
+      <button class="filter-btn" data-category="clay">Clay</button>
+      <button class="filter-btn" data-category="writing">Writing</button>
+    </div>
+
+    <!-- Masonry Gallery -->
+    <div class="masonry-gallery">
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/AngelPhantom.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Dewtom1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/PhantBat.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Aurora_for_Kazoo.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Dew Pirate.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/EurekaSwiss.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Skeleta Ghoul.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Kat_ghoul1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/HusbandsKiss.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Pond Swiss1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Grumpy_Soft1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Smoochies.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Sweet_RainDrop1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/sleepin4.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/CowboyGhoul.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Spoonage1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/hazelfur.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/spottedpelt1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/zikomo1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Party Cat1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/Sushi Cat2.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/lostdawn2.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/puter cat1.png" alt="">
+      </div>
+      <div class="gallery-item" data-category="digital">
+        <img src="../Comms/Imgs/.png" alt="">
+      </div>
+      <!-- Add more items as needed -->
+    </div>
+  </div>
+
+  
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prices</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-gallery.css" />
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        // Update active button style
+        document.querySelector(".filter-btn.active")?.classList.remove("active");
+        button.classList.add("active");
+
+        const selectedCategory = button.getAttribute("data-category");
+
+        galleryItems.forEach(item => {
+          const itemCategory = item.getAttribute("data-category");
+
+          if (selectedCategory === "all" || itemCategory === selectedCategory) {
+            item.style.display = "inline-block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // Lightbox zoom feature
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    galleryItems.forEach(item => {
+      item.addEventListener("click", () => {
+        const imgSrc = item.querySelector("img").getAttribute("src");
+        lightboxImg.setAttribute("src", imgSrc);
+        lightbox.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<body>
+
+<nav class="topnav">
+  <a href="index.html" id="HomeBtn">Home</a>
+  <a href="gallery.html" id="GalleryBtn">Gallery</a>
+  <a href="prices.html" id="PricesBtn">Prices</a>
+  <a href="" id="RequestCommBtn">Request Commission</a>
+</nav>
+
+<section class="commissions">
+  <h2>Prices</h2>
+  <section class="gallery-section">
+      <!-- Category Filters -->
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="digital">Digital</button>
+        <button class="filter-btn" data-category="clay">Clay</button>
+      </div>
+</section>
+
+
+<section class="gallery-item" data-category="digital">
+    <h2>Digital Price Breakdown</h2>
+
+    <h3>HEAD SHOT</h3>
+    <table>
+      <tr>
+        <td>$8</td>
+        <td><b>Line art</b>, no colors</td>
+      </tr>
+      <tr>
+        <td>$12</td>
+        <td><b>Flat colors</b>, no shading</td>
+      </tr>
+      <tr>
+        <td>$14</td>
+        <td><b>Full colors</b>, with shading</td>
+      </tr>
+    </table>
+
+    <h3>HALF BODY</h3>
+    <table>
+      <tr>
+        <td>$10</td>
+        <td><b>Line art</b>, no colors</td>
+      </tr>
+      <tr>
+        <td>$14</td>
+        <td><b>Flat colors</b>, no shading</td>
+      </tr>
+      <tr>
+        <td>$16</td>
+        <td><b>Full colors</b>, with shading</td>
+      </tr>
+    </table>
+
+    <h3>FULL BODY</h3>
+    <table>
+      <tr>
+        <td>$16</td>
+        <td><b>Line art</b>, no colors</td>
+      </tr>
+      <tr>
+        <td>$20</td>
+        <td><b>Flat colors</b>, no shading</td>
+      </tr>
+      <tr>
+        <td>$24</td>
+        <td><b>Full colors</b>, with shading</td>
+      </tr>
+    </table>
+
+    <h3>ADDITIONAL</h3>
+    <p><i>Add-ons and things to know</i></p>
+    <ul>
+      <li>Additional subject +$8/character on top of base price</li>
+      <li>Basic color/gradient background +$5 on top of base price</li>
+      <li>Complex background +$10 on top of base price</li>
+      <li>Provide references for characters, clothing, colors, poses if you have a certain idea in mind</li>
+    </ul>
+
+    <h2>TERMS &amp; LIMITS</h2>
+    <ul>
+      <li>All prices listed in USD ($)</li>
+      <li>No extreme themes such as gore, sex, violence, etc.</li>
+      <li>No armor, mecha, vehicles, buildings</li>
+      <li>Payment due up front via Venmo or PayPal</li>
+      <li>I reserve and will exercise my right to refuse any commission if it breaks these terms</li>
+      <li>Final product (without watermark) is for commissioner’s use ONLY</li>
+    </ul>
+
+      <h2>Where do I begin?</h2>
+      <p>If you’re interested in an original piece of digital art, you’re already in the right place!</p>
+
+      <ul>
+        <li>Contact the artist via email or direct message</li>
+        <li>Provide a description of your request</li>
+        <li>Artist sends a rough sketch for approval</li>
+        <li><b>Payment due</b> via Venmo or PayPal <b>once sketch is approved</b></li>
+        <li>Artist provides WIP, makes edits upon request</li>
+        <li>Artist sends commission for final approval, final edits</li>
+        <li>Artist sends finished piece without watermark via email</li>
+      </ul>
+
+      <div class="button"><a href="mailto:divinecharmsart@gmail.com" target="_blank">Get started</a></div>
+</section>
+
+
+<!--Clay Prices-->
+<section class="gallery-item" data-category="clay">
+   <h2>Clay Price Breakdown</h2>
+    <p>This list reflects base prices for commissioned pieces. </p>
+    <table>
+      <tr>
+        <td>$15</td>
+        <td>Charm</td>
+      </tr>
+      <tr>
+        <td>$16</td>
+        <td>Earrings</td>
+      </tr>
+      <tr>
+        <td>$18</td>
+        <td>Figurine</td>
+      </tr>
+    </table>
+
+    <h3>HARDWARE OPTIONS</h3>
+    <p>Please specify what type of hardware you want.</p>
+
+    <div class="display">
+      <div class="item">
+        <img src="../Comms/Hardware/strap1.jpg" alt="Phone strap with black cord and metal lobster clasp." width="100%" />
+        <p>Phone strap</p>
+      </div>
+
+      <div class="item">
+        <img src="../Comms/Hardware/jumpring2.jpg" alt="Metal key ring." width="100%" />
+        <p>Key ring</p>
+      </div>
+
+      <div class="item">
+        <img src="../Comms/Hardware/eyepin1.jpg" alt="Charm with a small metal eyepin." width="100%" />
+        <p>Eyepin only</p>
+      </div>
+
+      <div class="item">
+        <img src="../Comms/Hardware/sthook1.jpg" alt="Stainless steel earring hook." width="100%" />
+        <p>Stainless steel earring</p>
+      </div>
+
+      <div class="item">
+        <img src="../Comms/Hardware/plhook1.jpg" alt="Plastic earring hook." width="100%" />
+        <p>Plastic earring (sensitive skin)</p>
+      </div>
+    </div>
+
+    <h2>TERMS AND LIMITS</h2>
+    <ul>
+      <li>All prices listed in USD ($)</li>
+      <li><b>Prices subject to increase</b> for more complicated/larger designs</li>
+      <li>Shipping varies on distance, typically ~$5</li>
+      <li>No humans, machines, vehicles, complicated lettering</li>
+      <li>Payment due up front via Etsy transaction</li>
+      <li>I reserve and will exercise my right to refuse any commission</li>
+    </ul>
+
+    <h2>Where do I begin?</h2>
+    <p>If you’re interested in a custom charm or figurine, you’re already in the right place!</p>
+
+    <ul>
+      <li>Contact the artist via <a href="https://www.divinecharmsart.etsy.com/" target="_blank">Etsy</a> or direct message</li>
+      <li>Provide a description of your request</li>
+      <li>For pet figurines, provide reference photos</li>
+      <li>Artist creates Custom Etsy listing&mdash; <em>work does not start until purchased</em></li>
+      <li>Artist supplies WIP photos, can make minor edits upon request</li>
+      <li>Final product delivered via USPS. See Etsy for tracking numbers</li>
+    </ul>
+
+    <div class="button"><a href="https://www.divinecharmsart.etsy.com/" target="_blank">Order Now</a></div>
+</section>
+
+
+</section>
+</body>
+</html>
