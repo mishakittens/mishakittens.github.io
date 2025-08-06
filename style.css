@@ -126,10 +126,16 @@ body {
   background-color: mintcream;
   display: block;
   margin: 8px;
-  padding: 4px;
+  padding: 8px;
   width: 100%;
-  border-bottom: 2px solid #E9D6C9;
+  /*border-bottom: 2px solid #E9D6C9;*/
   text-align: center;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Responsive */
@@ -140,14 +146,15 @@ body {
   }
 
   .display {
+    /*display: block;*/
     display: grid;
-    grid-template-columns: repeat(3, 25%);
-    grid-column-gap: 20px;
+    grid-auto-columns: 20rem;
+    /*grid-column-gap: 20px;*/
     justify-content: center;
 
   }
   .display .item {
-    /*background-color: dodgerblue;*/
+    background-color: dodgerblue;
     margin: 4px;
   }
 
