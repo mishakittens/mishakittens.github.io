@@ -73,12 +73,14 @@ body {
 
 /* Navigation Bar */
 .topnav {
-  background-color: #B1C29E;
+  background-color: cornsilk;
   padding: 10px 20px;
   display: flex;
   justify-content: center;
   gap: 12px;
   box-shadow: 0 4px 8px rgba(180, 140, 100, 0.1);
+  position: sticky;
+  top: 0;
 }
 
 /* Styled buttons */
@@ -123,23 +125,30 @@ body {
 .display .item{
   background-color: mintcream;
   display: block;
-  margin: 4px;
-  width: 20%;
+  margin: 8px;
+  padding: 4px;
+  width: 100%;
   border-bottom: 2px solid #E9D6C9;
   text-align: center;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .commissions {
+    margin: 8px 4px;
     padding: 20px;
   }
 
-  .commissions h2 {
-    font-size: 28px;
+  .display {
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    grid-column-gap: 20px;
+    justify-content: center;
+
+  }
+  .display .item {
+    /*background-color: dodgerblue;*/
+    margin: 4px;
   }
 
-  .commissions h3 {
-    font-size: 20px;
-  }
 }
